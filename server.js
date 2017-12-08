@@ -3,6 +3,8 @@ const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
 
+//dynamic port for heroku
+const port=process.env.PORT || 3000;
 //initializing the express
 var app=express();
 
@@ -50,5 +52,5 @@ app.get('/bad',function(req,res){
 	});
 });
 
-app.listen(3000);
-console.log('Server Started on port 3000');
+app.listen(port);
+console.log(`Server Started on port ${port} `);
