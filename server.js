@@ -34,7 +34,11 @@ hbs.registerHelper('inCaps',function(text){
 })
 
 app.get('/',function(req,res){
-	res.send('<h1>Hello Express</h1>');
+	res.render('home.hbs',{
+		title:'Home Page',
+		headingContent:'HOME PAGE',
+		para:"Some text in Home page."	
+	});
 });
 
 app.get('/about',function(req,res){
@@ -52,5 +56,6 @@ app.get('/bad',function(req,res){
 	});
 });
 
+//port is dynamically provided by heroku ,locally it is 3000.	
 app.listen(port);
 console.log(`Server Started on port ${port} `);
